@@ -1,0 +1,37 @@
+/*
+  OPTIONAL — re-skins the shared components I couldn't see (AppShell/sidebar,
+  Button, Input, Textarea, Feedback) so they match the new navy/cyan look.
+
+  Find where your existing colour tokens are defined in globals.css
+  (ink, ink-soft, ink-faint, surface, rule, stamp-dark, rust, accent) and
+  change only their VALUES to the ones below. Keep your existing variable
+  names and your existing light/dark mechanism (the `.dark` class).
+*/
+
+/* Light */
+:root {
+  --page:        #f8fafc;
+  --surface:     #ffffff;
+  --ink:         #0f172a;
+  --ink-soft:    #475569;
+  --ink-faint:   #64748b;
+  --rule:        #e2e8f0;
+  --accent:      #2563eb;   /* primary buttons */
+  --accent-dark: #1d4ed8;
+  --stamp-dark:  #0e7490;   /* links */
+  --rust:        #dc2626;   /* destructive */
+}
+
+/* Dark */
+.dark {
+  --page:        #050d1a;
+  --surface:     #0b1a2e;
+  --ink:         #f1f5f9;
+  --ink-soft:    #cbd5e1;
+  --ink-faint:   #94a3b8;
+  --rule:        rgba(255, 255, 255, 0.10);
+  --accent:      #2563eb;
+  --accent-dark: #3b82f6;
+  --stamp-dark:  #67e8f9;
+  --rust:        #f87171;
+}

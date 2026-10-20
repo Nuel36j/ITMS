@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+/* Class-based dark mode: <html class="dark"> */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  color-scheme: light;
+  --paper: #bebba7;
+  --paper-dark: #bebaaa;
+  --surface:  #cecbba;
+  --ink: #17333f;
+  --ink-soft: #3f5560;
+  --ink-faint: #6b7d86;
+  --rule: rgba(23, 51, 63, 0.14);
+  --stamp: #0b7a6b;        /* primary teal */
+  --stamp-dark: #075e52;
+  --rust: #c8502d;         /* destructive */
+  --accent: #ffc13d;       /* amber CTA */
+  --accent-dark: #eba91f;
+  --highlight: #e2f06e;    /* lime "at a glance" card */
+  --sidebar: #173a47;
+  --stamp-light: #ddf0ea;
+--rust-light: #fbe6de;
+--brass: #b8892b;
+--brass-light: #fff1cc;
+}
+
+.dark {
+  color-scheme: dark;
+  --paper: #0f1f27;
+  --paper-dark: #0b171d;
+  --surface: #162b35;
+  --ink: #edebdd;
+  --ink-soft: #b5c3c6;
+  --ink-faint: #8197a0;
+  --rule: rgba(237, 235, 221, 0.14);
+  --stamp: #2fb59f;
+  --stamp-dark: #5cd3be;
+  --rust: #ef7f5c;
+  --accent: #ffc13d;
+  --accent-dark: #ffd36b;
+  --highlight: #c9d95a;
+  --sidebar: #0b171d;
+  --stamp-light: #17413d;
+--rust-light: #3a2220;
+--brass: #e0b24f;
+--brass-light: #3a3217;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-dark: var(--paper-dark);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-faint: var(--ink-faint);
+  --color-rule: var(--rule);
+  --color-stamp: var(--stamp);
+  --color-stamp-dark: var(--stamp-dark);
+  --color-rust: var(--rust);
+  --color-accent: var(--accent);
+  --color-accent-dark: var(--accent-dark);
+  --color-highlight: var(--highlight);
+  --color-sidebar: var(--sidebar);
+  --color-stamp-light: var(--stamp-light);
+--color-rust-light: var(--rust-light);
+--color-brass: var(--brass);
+--color-brass-light: var(--brass-light);
+
+  --font-serif: var(--font-display);
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-data);
+}
+
+@layer base {
+  html { @apply bg-paper; }
+  body { @apply bg-paper text-ink antialiased; }
+  ::selection { background: var(--accent); color: #17333f; }
+  :focus-visible { outline: 2px solid var(--stamp); outline-offset: 3px; }
+}
+
+@layer utilities {
+  .ledger-lines {
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 35px,
+      color-mix(in srgb, var(--ink) 7.5%, transparent) 36px
+    );
+  }
+  .rule-t { border-top: 1px solid var(--rule); }
+  .rule-b { border-bottom: 1px solid var(--rule); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,12 @@
+uvicorn==0.52.4
+fastapi
+sqlalchemy
+pydantic
+pydantic_settings
+python-jose
+passlib
+python-multipart
+argon2-cffi
+email-validator
+psycopg[binary]
+alembic
