@@ -1,10 +1,12 @@
 from sqlalchemy import create_engine, MetaData, select
-import psycopg2
+import psycopg
+from dotenv import load_dotenv
+from app.core.config import settings
 
 sqlite_engine = create_engine("sqlite:///itm_backup.db")
 
 postgres_engine = create_engine(
-   "postgresql+psycopg2://postgres:BMWM3P678@localhost:5432/itmsdb"
+  settings.DATABASE_URL)
 )
 
 metadata = MetaData()
