@@ -1,6 +1,5 @@
 from sqlalchemy import create_engine, MetaData, select
 import psycopg
-from dotenv import load_dotenv
 from app.core.config import settings
 
 sqlite_engine = create_engine("sqlite:///itm_backup.db")
