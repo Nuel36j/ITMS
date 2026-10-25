@@ -80,6 +80,8 @@ export interface Summary {
 export interface SummaryGenerateParams {
   interval_type: SummaryInterval;
   start_date: string;
+  end_date?: string;
+  overwrite?: boolean;
 }
 
 export interface SummaryUpdatePayload {

@@ -195,6 +195,7 @@ export const api = {
         query: {
           interval_type: params.interval_type,
           start_date: params.start_date,
+          end_date: params.end_date,
           overwrite: params.overwrite ? "true" : undefined,
         },
       }),

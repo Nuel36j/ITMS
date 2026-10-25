@@ -99,6 +99,6 @@ All routes except register and login require the header `Authorization: Bearer <
 ## Notes
 
 - Tables are created on first run (or by your migrations, if you use Alembic). Never commit your `.env` file.
-- The PostgreSQL driver (e.g. `psycopg2-binary`) must be listed in `requirements.txt`.
+- The PostgreSQL driver (e.g. `psycopg3-binary`) must be listed in `requirements.txt`.
 - In production, use a hosted PostgreSQL instance and set `DATABASE_URL` to its connection string.
 - Enable CORS for your frontend origin in `main.py` when deploying.
