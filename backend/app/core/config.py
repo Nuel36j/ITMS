@@ -21,6 +21,12 @@ class Settings(BaseSettings):
     MODEL:str = os.getenv("MODEL")
     FALLBACK_MODELS: str = "gemini-3.7-flash,gemini-flash-latest"
 
+
+    @property
+    def cors_origins(self) -> list[str]:
+        return [o.strip().rstrip("/") for o in self.CORS_ORIGINS.split(",") if o.strip()]
+
+    
     @property
     def model_chain(self) -> list[str]:
         extras = [m.strip() for m in self.FALLBACK_MODELS.split(",") if m.strip()]
